@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shorter</title>
+    <script src="https://kit.fontawesome.com/9070a33600.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="my-8">
+        <!-- Link input -->
+        <section class="w-[50%] mx-auto">
+            <div class="form-control">
+                <div class="input-group">
+                    <input id="input-link" type="text" placeholder="Shorten a link here..."
+                        class="w-full input input-bordered" />
+                    <button onclick="loadData()" class="btn">Shorten it!</button>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Main -->
+    <main class="mb-8">
+        <!-- Shorten link -->
+        <section class="w-[50%] mx-auto">
+            <!-- Loading animation -->
+            <div id="loader" class="hidden mt-20">
+                <div class="flex items-center justify-center">
+                    <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                        role="status">
+                        <span
+                            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert -->
+            <div id="alert" class="hidden">
+                <div class="flex justify-center items-center p-4 mb-4 text-sm text-red-800 rounded-lg" role="alert">
+                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div>
+                        <span class="font-medium">Oops!</span> Invalid link.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div id="card-container" class="card w-full bg-base-100 shadow-xl rounded-md">
+                <!-- <div class="card-body">
+                    <div class="flex">
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="tooltip" data-tip="Copy Link">
+                            <button class="btn btn-xs"><i class="fa-solid fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/utilities.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
